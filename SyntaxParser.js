@@ -28,16 +28,16 @@ let syntax = {
         ["AssignmentExpression"]
     ],
     AssignmentExpression: [
-        ["LeftHandSideExpression", "=", "LogicalORExpression"],
-        ["LogicalORExpression"]
+        ["LogicalORExpression"],
+        ["AdditiveExpression", "=", "LogicalORExpression"],
     ],
     LogicalORExpression: [
         ["LogicalANDExpression"],
-        ["LogicalORExpression", "||", "LogicalANDExpression"],
+        ["LeftHandSideExpression", "||", "LogicalANDExpression"],
     ],
     LogicalANDExpression: [
         ["AdditiveExpression"],
-        ["LogicalANDExpression", "&&", "AdditiveExpression"],
+        ["LeftHandSideExpression", "&&", "AdditiveExpression"],
     ],
     AdditiveExpression: [
         ["MultiplicativeExpression"],
